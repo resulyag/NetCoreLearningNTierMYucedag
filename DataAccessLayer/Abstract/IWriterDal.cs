@@ -7,8 +7,7 @@ using EntityLayer.Concrete;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IBlogDal:IGenericDal<Blog>
+    public interface IWriterDal : IGenericDal<Writer>
     {
-
     }
 }
