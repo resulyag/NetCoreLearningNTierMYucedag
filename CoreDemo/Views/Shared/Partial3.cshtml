@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-4 footer-grid-agileits-w3ls text-left">
                 <h3>Hakkımızda</h3>
-                <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis at tellus..</p>
+                <p>Blog teknik bilgi gerektirmeden, kendi istedikleri şeyleri, kendi istedikleri şekilde yazan insanların oluşturabildikleri, günlüğe benzeyen web siteleridir. Genellikle güncelden eskiye doğru sıralanmış yazı ve yorumların yayınlandığı, web tabanlı bir yayını belirtir...</p>
                 <div class="read">
                     <a href="single.html" class="btn btn-primary read-m">Devamını oku</a>
                 </div>
@@ -73,19 +73,9 @@
             </div>
             <!-- subscribe -->
             <div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
-                <h2>Signup to our newsletter</h2>
-                <div class="subscribe-main text-left">
-                    <div class="subscribe-form">
-                        <form action="#" method="post" class="subscribe_form">
-                            <input class="form-control" type="email" placeholder="Enter your email..." required="">
-                            <button type="submit" class="btn btn-primary submit">Submit</button>
-                        </form>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <p>We respect your privacy.No spam ever!</p>
-                </div>
-                <!-- //subscribe -->
+                @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMailFooter.cshtml")
             </div>
+            <!-- //subscribe -->
         </div>
         <!-- footer -->
         <div class="footer-cpy text-center">
@@ -122,7 +112,7 @@
             </div>
             <div class="w3layouts-agile-copyrightbottom">
                 <p>
-                    © @DateTime.Now.Year Weblog. All Rights Reserved | Design by
+                    © @DateTime.Now.Year Asp.Net Core 5.0 Proje Kampı Tüm Hakları Saklıdır | Design by
                     <a href="http://w3layouts.com/">W3layouts</a>
                 </p>
 
