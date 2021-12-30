@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Controllers
 {
-    [Authorize]
     public class WriterController : Controller
     {
-        
         public IActionResult Index()
         {
             return View();
         }
-        [AllowAnonymous]
         public IActionResult WriterProfile()
         {
             return View();
