@@ -9,10 +9,10 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
-        <th>blog başlığı</th>
-        <th>oluşturulma tarihi</th>
-        <th>categorisi</th>
-        <th>durumu</th>
+        <th>Blog Başlığı</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Kategorisi</th>
+        <th>Durumu</th>
         <th>Sil</th>
         <th>Düzenle</th>
     </tr>
@@ -21,9 +21,18 @@
         <tr>
             <th>@item.BlogID</th>
             <td>@item.BlogTitle</td>
-            <td>@item.BlogCreateDate</td>
-            <td>@item.CategoryID</td>
-            <td>@item.BlogStatus</td>
+            <td>@(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))</td>
+            <td>@item.Category.CategoryName</td>
+            <td>
+                @if (@item.BlogStatus == true)
+                {
+                    <text>Aktif</text>
+                }
+                else
+                {
+                    <text>Pasif</text>
+                }
+            </td>
             <td><a href="#" class="btn btn-danger">Sil</a></td>
             <td><a href="#" class="btn btn-warning">Düzenle</a></td>
         </tr>
