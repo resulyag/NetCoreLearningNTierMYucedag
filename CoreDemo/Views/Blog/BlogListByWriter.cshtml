@@ -15,7 +15,6 @@
         <th>Durumu</th>
         <th>Sil</th>
         <th>Düzenle</th>
-        <th>Sil</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -34,11 +33,8 @@
                     <text>Pasif</text>
                 }
             </td>
-            <td><a asp-action="DeleteBlog" asp-controller="Blog" asp-route-id="@item.BlogID" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-warning">Düzenle</a></td>
-            <td>
-                @Html.ActionLink("Sil Butonu", "DeleteBlog", new { id = item.BlogID }, new { @class = "btn btn-danger", @onclick = "return corfirm('Gerçekten Silmek İstiyor Musunuz?');" })
-            </td>
+            <td>@Html.ActionLink("Sil", "DeleteBlog", new { id = item.BlogID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz?');" })</td>
+            <td><a  asp-action="EditBlog" asp-controller="Blog" asp-route-id="@item.BlogID" class="btn btn-warning">Düzenle</a></td>
         </tr>
     }
 </table>
