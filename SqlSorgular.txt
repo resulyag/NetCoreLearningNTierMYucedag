@@ -25,3 +25,29 @@ Declare @p int
 Declare @k int
 Select @p=Puan , @k=Kategori From inserted
 Update Tbl2 Set Puan=Puan+@p where ID=@k
+
+******************************************
+
+Yeni blog eklendiğinde çalışacak trigger
+
+--Create Trigger AddBlogInRaytingTable
+--On Blogs
+--After Insert
+--As
+--Declare @ID int
+--Select @ID=BlogID from inserted 
+--insert into BlogRaytings (BlogID,BlogTotalScore,BlogRaytingCount)
+--Values (@ID,0,0)
+
+Bloğa yeni yorum eklendiğinde çalışacak trigger
+
+Create Trigger AddScoreInComment
+On Comments
+After Insert
+As
+Declare @ID int
+Declare @Score int
+Declare @RaytingCount int
+Select @ID=BlogID,@Score=BlogScore from inserted
+Update BlogRaytings Set BlogTotalScore=BlogTotalScore+@Score, BlogRaytingCount+=1
+where BlogID=@ID
